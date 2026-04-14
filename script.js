@@ -154,12 +154,17 @@
   /* ━━ CURSOR ━━ */
   const cur = document.getElementById('cur');
   const ring = document.getElementById('curRing');
+  const glow = document.getElementById('glowCursor');
   let mx = 0, my = 0, rx = 0, ry = 0;
   document.addEventListener('mousemove', e => {
     mx = e.clientX;
     my = e.clientY;
     cur.style.left = mx + 'px';
     cur.style.top = my + 'px';
+    if(glow) {
+      glow.style.setProperty('--x', mx + 'px');
+      glow.style.setProperty('--y', my + 'px');
+    }
   });
   (function animRing() {
     rx += (mx - rx) * .12;
@@ -211,7 +216,7 @@
   document.querySelectorAll('.edu-card').forEach(el => eduObs.observe(el));
 
   /* ━━ STICKY PROJECTS SCROLL ━━ */
-  const N = 6;
+  const N = 8;
   const projScroll = document.getElementById('proj-scroll');
   const projTrack = document.getElementById('proj-track');
   const projFill = document.getElementById('projFill');
@@ -267,6 +272,7 @@
     }
 
     document.querySelectorAll('.pslide').forEach((slide, i) => {
+      slide.classList.toggle('active', i === idx);
       slide.querySelectorAll('video').forEach(v => {
         Math.abs(i - idx) <= 1 ? v.play().catch(() => { }) : v.pause();
       });
