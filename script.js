@@ -360,9 +360,22 @@
 
   /* ━━ LANGUAGE ━━ */
   let lang = 'en';
+  const cvLinks = document.querySelectorAll('.cv-link');
+  
   document.getElementById('langBtn').addEventListener('click', () => {
     lang = lang === 'en' ? 'fr' : 'en';
     document.documentElement.classList.toggle('fr', lang === 'fr');
+    
+    // Update CV links and titles
+    cvLinks.forEach(link => {
+      if (lang === 'fr') {
+        link.href = 'assets/CVYosra-fr.pdf';
+        link.title = 'Telecharger CV';
+      } else {
+        link.href = 'assets/Yosra_CV_Ang.pdf';
+        link.title = 'Download CV';
+      }
+    });
   });
 
   /* ━━ THEME ━━ */
