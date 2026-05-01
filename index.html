@@ -1,14 +1,14 @@
 <!DOCTYPE html>
-<html lang="en" class="dark">
+<html lang="en">
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Yosra DAB — Full Stack Software Engineer</title>
+  <title>Yosra DAB — Full Stack Engineer</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
-    href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&family=DM+Mono:wght@400;500&family=Cormorant+Garamond:ital,wght@1,300;1,400;1,500&display=swap"
     rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="style.css">
@@ -16,822 +16,678 @@
 
 <body>
 
-  <div class="cur" id="cur"></div>
-  <div class="cur-ring" id="curRing"></div>
-  <div class="glow-cursor" id="glowCursor"></div>
-  <div id="pb"></div>
+  <div id="cursor-dot"></div>
+  <div id="cursor-ring"><span id="cursor-label"></span></div>
+  <div id="pg-bar"></div>
 
   <!-- HEADER -->
-  <header>
-    <a href="#hero" class="logo">Yosra <span>DAB</span></a>
-    <nav>
-      <a href="#profile"><span class="lang-en">Profile</span><span class="lang-fr">Profil</span></a>
-      <a href="#skills"><span class="lang-en">Skills</span><span class="lang-fr">Competences</span></a>
-      <a href="#experience"><span class="lang-en">Journey</span><span class="lang-fr">Parcours</span></a>
-      <a href="#projects-section"><span class="lang-en">Works</span><span class="lang-fr">Projets</span></a>
-      <a href="#education"><span class="lang-en">Education</span><span class="lang-fr">Formation</span></a>
+  <header id="site-header">
+    <a href="#hero" class="logo">YD<span class="logo-dot">.</span></a>
+    <nav class="main-nav">
+      <a href="#about" class="nav-link">Profile</a>
+      <a href="#skills" class="nav-link">Skills</a>
+      <a href="#experience" class="nav-link">Journey</a>
+      <a href="#projects" class="nav-link">Works</a>
+      <a href="#education" class="nav-link">Education</a>
     </nav>
-    <div class="hctrl">
-      <a href="assets/Yosra_CV_Ang.pdf" class="ctrl cv-link" title="Download CV" download target="_blank"><i
-          class="fas fa-file-pdf"></i></a>
-      <button class="ctrl" id="langBtn" title="Switch language"><i class="fas fa-globe"></i></button>
-      <button class="ctrl" id="themeBtn" title="Toggle theme"><i class="fas fa-circle-half-stroke"></i></button>
-      <button class="ctrl" id="menuBtn" title="Menu"><i class="fas fa-bars"></i></button>
+    <div class="header-actions">
+      <a href="assets/Yosra_CV_Ang.pdf" class="hbtn cv-link" title="CV" download target="_blank">
+        <i class="fas fa-file-pdf"></i><span>CV</span>
+      </a>
+      <button class="icon-btn" id="langBtn">
+        <span class="lang-en">FR</span><span class="lang-fr">EN</span>
+      </button>
+      <button class="icon-btn" id="themeBtn">
+        <i class="fas fa-circle-half-stroke"></i>
+      </button>
+      <button class="icon-btn" id="menuBtn" style="display:none">
+        <i class="fas fa-bars" id="menuIcon"></i>
+      </button>
     </div>
   </header>
 
-  <div class="m-nav" id="mNav">
-    <a href="#profile" class="m-link"><span class="lang-en">Profile</span><span class="lang-fr">Profil</span></a>
-    <a href="#skills" class="m-link"><span class="lang-en">Skills</span><span class="lang-fr">Competences</span></a>
-    <a href="#experience" class="m-link"><span class="lang-en">Journey</span><span class="lang-fr">Parcours</span></a>
-    <a href="#projects-section" class="m-link"><span class="lang-en">Works</span><span
-        class="lang-fr">Projets</span></a>
-    <a href="#education" class="m-link"><span class="lang-en">Education</span><span class="lang-fr">Formation</span></a>
+  <!-- MOBILE NAV -->
+  <div class="m-overlay" id="mOverlay">
+    <a href="#about" class="m-link">Profile</a>
+    <a href="#skills" class="m-link">Skills</a>
+    <a href="#experience" class="m-link">Journey</a>
+    <a href="#projects" class="m-link">Works</a>
+    <a href="#education" class="m-link">Education</a>
   </div>
 
   <main>
 
     <!-- HERO -->
     <section id="hero">
-      <div class="hero-inner">
-        <div class="hero-left">
-          <div class="hero-tag">
-            <span class="lang-en">01 — Full Stack Software Engineer</span>
-            <span class="lang-fr">01 — Ingenieure Logicielle Full Stack</span>
-          </div>
-          <h1 class="hero-title">
-            YOSRA<br>
-            <span class="accent-line">DAB</span>
-          </h1>
-          <p class="hero-desc">
+      <div class="hero-bg-grid"></div>
+      <div class="hero-content">
+        <div class="hero-eyebrow rv">
+          <span class="lime-dot"></span>
+          <span class="lang-en">Full Stack Software Engineer · Available for work</span>
+          <span class="lang-fr">Ingénieure Logicielle Full Stack · Disponible</span>
+        </div>
+        <h1 class="hero-name">
+          <span class="name-line line-1">
+            <span class="char" style="--i:0">Y</span><span class="char" style="--i:1">O</span><span class="char"
+              style="--i:2">S</span><span class="char" style="--i:3">R</span><span class="char" style="--i:4">A</span>
+          </span>
+          <span class="name-line line-2"><em>DAB</em></span>
+        </h1>
+        <div class="hero-footer">
+          <p class="hero-desc rv">
             <span class="lang-en">Crafting robust web applications with Spring Boot, .NET, Angular &amp; Symfony — clean
               code, secure architecture, seamless experiences.</span>
-            <span class="lang-fr">Developpement d'applications web robustes avec Spring Boot, .NET, Angular et Symfony —
-              code propre, architecture securisee, experiences fluides.</span>
+            <span class="lang-fr">Développement d'applications robustes avec Spring Boot, .NET, Angular &amp; Symfony —
+              code propre, architecture sécurisée.</span>
           </p>
-          <div class="hero-actions">
-            <a href="#projects-section" class="btn btn-primary">
+          <div class="hero-cta rv d1">
+            <a href="#projects" class="btn-lime hover-target" data-label="VIEW">
               <span class="lang-en">View Work</span><span class="lang-fr">Voir Projets</span>
+              <i class="fas fa-arrow-right"></i>
             </a>
-            <a href="#experience" class="btn btn-outline">
-              <span class="lang-en">My Journey</span><span class="lang-fr">Mon Parcours</span>
-            </a>
-            <a href="assets/Yosra_CV_Ang.pdf" class="btn btn-ghost cv-link" download target="_blank">
-              <i class="fas fa-file-download"></i>
-              <span class="lang-en">Download CV</span>
-              <span class="lang-fr">Telecharger CV</span>
+            <a href="assets/Yosra_CV_Ang.pdf" class="btn-outline cv-link hover-target" download target="_blank"
+              data-label="GET">
+              <span class="lang-en">Download CV</span><span class="lang-fr">Télécharger CV</span>
             </a>
           </div>
-        </div>
-
-        <div class="hero-right">
-          <div class="photo-wrap">
-            <div class="photo-frame">
-              <img src="assets/yosra.jpg" alt="Yosra DAB">
-            </div>
-          </div>
-          <div class="badge-avail">
-            <div class="badge-dot"></div>
-            <span class="lang-en">Available for work</span>
-            <span class="lang-fr">Disponible pour travailler</span>
-          </div>
-          <div class="hero-stats">
+          <div class="hero-stats rv d2">
             <div class="hstat">
-              <div class="hstat-n">2+</div>
-              <div class="hstat-l"><span class="lang-en">Years Exp.</span><span class="lang-fr">Ans Exp.</span></div>
+              <div class="hstat-n" data-count="2">0</div>
+              <div class="hstat-l lang-en">Years exp.</div>
+              <div class="hstat-l lang-fr">Ans exp.</div>
             </div>
+            <div class="hstat-sep"></div>
             <div class="hstat">
-              <div class="hstat-n">5+</div>
-              <div class="hstat-l"><span class="lang-en">Frameworks</span><span class="lang-fr">Frameworks</span></div>
+              <div class="hstat-n" data-count="8">0</div>
+              <div class="hstat-l lang-en">Projects</div>
+              <div class="hstat-l lang-fr">Projets</div>
+            </div>
+            <div class="hstat-sep"></div>
+            <div class="hstat">
+              <div class="hstat-n" data-count="5">0</div>
+              <div class="hstat-l">Frameworks</div>
             </div>
           </div>
         </div>
       </div>
-
-      <div class="hero-scroll rv d4">
-        <span class="lang-en">Scroll to explore</span>
-        <span class="lang-fr">Defiler pour explorer</span>
+      <div class="hero-photo-area rv d1">
+        <div class="photo-frame">
+          <img src="assets/image_workplace.png" alt="Yosra DAB">
+          <div class="photo-deco"></div>
+        </div>
+        <div class="photo-badge">
+          <span class="badge-dot"></span>
+          <span class="lang-en">Available for work</span>
+          <span class="lang-fr">Disponible pour travailler</span>
+        </div>
+      </div>
+      <div class="scroll-cue">
+        <span class="lang-en">scroll</span><span class="lang-fr">défiler</span>
+        <span class="scue-line"></span>
       </div>
     </section>
 
-    <hr class="divider">
+    <!-- TICKER -->
+    <div class="ticker-band">
+      <div class="ticker-inner">
+        <span>Spring Boot</span><b>✦</b><span>Angular</span><b>✦</b><span>.NET /
+          ASP.NET</span><b>✦</b><span>Symfony</span><b>✦</b><span>React</span><b>✦</b><span>Java ·
+          C#</span><b>✦</b><span>MySQL ·
+          PostgreSQL</span><b>✦</b><span>Docker</span><b>✦</b><span>Jenkins</span><b>✦</b><span>JWT ·
+          OAuth2</span><b>✦</b><span>Microservices</span><b>✦</b>
+        <span>Spring Boot</span><b>✦</b><span>Angular</span><b>✦</b><span>.NET /
+          ASP.NET</span><b>✦</b><span>Symfony</span><b>✦</b><span>React</span><b>✦</b><span>Java ·
+          C#</span><b>✦</b><span>MySQL ·
+          PostgreSQL</span><b>✦</b><span>Docker</span><b>✦</b><span>Jenkins</span><b>✦</b><span>JWT ·
+          OAuth2</span><b>✦</b><span>Microservices</span><b>✦</b>
+      </div>
+    </div>
 
-    <!-- PROFILE -->
-    <section id="profile" class="section">
-      <div class="ch"><span class="lang-en">02 - About</span><span class="lang-fr">02 - A Propos</span></div>
-      <h2 class="stitle rv">
-        <span class="lang-en">Building with<br><em>precision</em> &amp; passion</span>
-        <span class="lang-fr">Developper avec<br><em>precision</em> &amp; passion</span>
-      </h2>
-      <div class="profile-grid">
-        <p class="profile-text rv d1">
-          <span class="lang-en">I am a Full Stack Software Engineer with a degree from ESPRIT, specializing in building
-            robust, scalable web applications. I work across the full product lifecycle — from API design and database
-            architecture to polished front-end interfaces — using Spring Boot, .NET, Angular, and Symfony.<br><br>My
-            background spans enterprise applications in banking, POS, healthcare, and e-commerce. I thrive in Agile
-            environments, bring a security-first mindset to every project, and am passionate about clean code and
-            exceptional user experience.</span>
-          <span class="lang-fr">Je suis Ingenieure Logicielle Full Stack, diplômee d'ESPRIT, specialisee dans le
-            developpement d'applications web robustes. J'interviens sur tout le cycle de vie produit — de la conception
-            d'API a l'architecture base de donnees et aux interfaces front-end soignees.<br><br>Mon experience couvre
-            des applications d'entreprise dans les secteurs bancaire, POS, sante et e-commerce. Je m'epanouis dans les
-            environnements Agile et j'apporte une attention particuliere a la securite et a la qualite du code.</span>
-        </p>
-        <div class="spec-list rv d2">
-          <div class="spec-item">
-            <div class="spec-ico"><i class="fas fa-server"></i></div>
-            <div>
-              <div class="spec-label"><span class="lang-en">Backend Engineering</span><span
-                  class="lang-fr">Developpement Backend</span></div>
-              <div class="spec-sub">Spring Boot · .NET · Symfony</div>
-            </div>
+    <!-- ABOUT -->
+    <section id="about" class="section">
+      <div class="sw">
+        <div class="sec-label rv"><span class="lnum">02</span><span class="lang-en">About</span><span class="lang-fr">À
+            Propos</span></div>
+        <div class="about-grid">
+          <div class="about-left">
+            <h2 class="sec-title rv">
+              <span class="lang-en">Building with<br><em>precision</em><br>&amp; passion</span>
+              <span class="lang-fr">Développer avec<br><em>précision</em><br>&amp; passion</span>
+            </h2>
+            <p class="body-text rv d1 lang-en">Full Stack Software Engineer with a degree from ESPRIT, specializing in
+              robust, scalable web applications. I work across the full product lifecycle — from API design and database
+              architecture to polished front-end interfaces using Spring Boot, .NET, Angular, and Symfony.</p>
+            <p class="body-text rv d1 lang-fr">Ingénieure Logicielle Full Stack diplômée d'ESPRIT, spécialisée dans les
+              applications web robustes. J'interviens sur tout le cycle produit — de la conception d'API à
+              l'architecture base de données et aux interfaces front-end soignées.</p>
+            <p class="body-text rv d2 lang-en">My background spans enterprise applications in banking, POS, healthcare,
+              and e-commerce. I thrive in Agile environments and bring a security-first mindset to every project.</p>
+            <p class="body-text rv d2 lang-fr">Mon expérience couvre les secteurs bancaire, POS, santé et e-commerce. Je
+              m'épanouis dans les environnements Agile avec une attention particulière à la sécurité.</p>
           </div>
-          <div class="spec-item">
-            <div class="spec-ico"><i class="fas fa-layer-group"></i></div>
-            <div>
-              <div class="spec-label"><span class="lang-en">Frontend Development</span><span
-                  class="lang-fr">Developpement Frontend</span></div>
-              <div class="spec-sub">Angular · React · WordPress</div>
+          <div class="about-right rv d1">
+            <div class="spec-item hover-target" data-label="CORE">
+              <div class="spec-ico"><i class="fas fa-server"></i></div>
+              <div>
+                <div class="spec-ttl lang-en">Backend Engineering</div>
+                <div class="spec-ttl lang-fr">Développement Backend</div>
+                <div class="spec-sub">Spring Boot · .NET · Symfony</div>
+              </div>
+              <i class="fas fa-arrow-right spec-arr"></i>
             </div>
-          </div>
-          <div class="spec-item">
-            <div class="spec-ico"><i class="fas fa-database"></i></div>
-            <div>
-              <div class="spec-label"><span class="lang-en">Database &amp; APIs</span><span class="lang-fr">BDD &amp;
-                  APIs</span></div>
-              <div class="spec-sub">MySQL · PostgreSQL · REST</div>
+            <div class="spec-item hover-target" data-label="UI">
+              <div class="spec-ico"><i class="fas fa-layer-group"></i></div>
+              <div>
+                <div class="spec-ttl lang-en">Frontend Development</div>
+                <div class="spec-ttl lang-fr">Développement Frontend</div>
+                <div class="spec-sub">Angular · React · WordPress</div>
+              </div>
+              <i class="fas fa-arrow-right spec-arr"></i>
             </div>
-          </div>
-          <div class="spec-item">
-            <div class="spec-ico"><i class="fas fa-cubes"></i></div>
-            <div>
-              <div class="spec-label">DevOps &amp; CI/CD</div>
-              <div class="spec-sub">Docker · Jenkins · Git</div>
+            <div class="spec-item hover-target" data-label="DB">
+              <div class="spec-ico"><i class="fas fa-database"></i></div>
+              <div>
+                <div class="spec-ttl lang-en">Database &amp; APIs</div>
+                <div class="spec-ttl lang-fr">BDD &amp; APIs</div>
+                <div class="spec-sub">MySQL · PostgreSQL · REST</div>
+              </div>
+              <i class="fas fa-arrow-right spec-arr"></i>
+            </div>
+            <div class="spec-item hover-target" data-label="OPS">
+              <div class="spec-ico"><i class="fas fa-cubes"></i></div>
+              <div>
+                <div class="spec-ttl">DevOps &amp; CI/CD</div>
+                <div class="spec-sub">Docker · Jenkins · Git</div>
+              </div>
+              <i class="fas fa-arrow-right spec-arr"></i>
             </div>
           </div>
         </div>
       </div>
     </section>
-
-    <hr class="divider">
 
     <!-- SKILLS -->
-    <section id="skills" class="section">
-      <div class="ch"><span class="lang-en">03 - Technical Skills</span><span class="lang-fr">03 - Competences
-          Techniques</span></div>
-      <h2 class="stitle rv">
-        <span class="lang-en">Stack &amp; <em>expertise</em></span>
-        <span class="lang-fr">Stack &amp; <em>expertise</em></span>
-      </h2>
-      <div class="skills-grid rv d1">
-        <div class="skcard">
-          <div class="skcard-n">01</div>
-          <div class="skcard-t"><span class="lang-en">Languages</span><span class="lang-fr">Langages</span></div>
-          <div class="skitem"><span class="skname">Java / C#</span>
-            <div class="skbar">
-              <div class="skfill" data-w="95"></div>
-            </div><span class="skpct">95%</span>
+    <section id="skills" class="section s-alt">
+      <div class="sw">
+        <div class="sec-label rv"><span class="lnum">03</span><span class="lang-en">Technical Skills</span><span
+            class="lang-fr">Compétences</span></div>
+        <h2 class="sec-title rv">
+          <span class="lang-en">Stack &amp; <em>expertise</em></span>
+          <span class="lang-fr">Stack &amp; <em>expertise</em></span>
+        </h2>
+        <div class="sk-grid">
+          <div class="sk-col rv d1">
+            <div class="sk-head"><span class="sk-num">01</span><span class="lang-en">Languages</span><span
+                class="lang-fr">Langages</span></div>
+            <div class="sk-item"><span>Java / C#</span>
+              <div class="bar">
+                <div class="bar-fill" data-w="95"></div>
+              </div><span class="pct">95</span>
+            </div>
+            <div class="sk-item"><span>JS / HTML / CSS</span>
+              <div class="bar">
+                <div class="bar-fill" data-w="90"></div>
+              </div><span class="pct">90</span>
+            </div>
+            <div class="sk-item"><span>PHP</span>
+              <div class="bar">
+                <div class="bar-fill" data-w="85"></div>
+              </div><span class="pct">85</span>
+            </div>
+            <div class="sk-item"><span>Python / C</span>
+              <div class="bar">
+                <div class="bar-fill" data-w="80"></div>
+              </div><span class="pct">80</span>
+            </div>
           </div>
-          <div class="skitem"><span class="skname">JavaScript / HTML / CSS</span>
-            <div class="skbar">
-              <div class="skfill" data-w="90"></div>
-            </div><span class="skpct">90%</span>
+          <div class="sk-col rv d2">
+            <div class="sk-head"><span class="sk-num">02</span>Frameworks</div>
+            <div class="sk-item"><span>Spring Boot</span>
+              <div class="bar">
+                <div class="bar-fill" data-w="92"></div>
+              </div><span class="pct">92</span>
+            </div>
+            <div class="sk-item"><span>.NET / ASP.NET</span>
+              <div class="bar">
+                <div class="bar-fill" data-w="90"></div>
+              </div><span class="pct">90</span>
+            </div>
+            <div class="sk-item"><span>Angular</span>
+              <div class="bar">
+                <div class="bar-fill" data-w="88"></div>
+              </div><span class="pct">88</span>
+            </div>
+            <div class="sk-item"><span>Symfony</span>
+              <div class="bar">
+                <div class="bar-fill" data-w="85"></div>
+              </div><span class="pct">85</span>
+            </div>
           </div>
-          <div class="skitem"><span class="skname">PHP</span>
-            <div class="skbar">
-              <div class="skfill" data-w="85"></div>
-            </div><span class="skpct">85%</span>
-          </div>
-          <div class="skitem"><span class="skname">Python / C</span>
-            <div class="skbar">
-              <div class="skfill" data-w="80"></div>
-            </div><span class="skpct">80%</span>
-          </div>
-        </div>
-        <div class="skcard">
-          <div class="skcard-n">02</div>
-          <div class="skcard-t">Frameworks</div>
-          <div class="skitem"><span class="skname">Spring Boot</span>
-            <div class="skbar">
-              <div class="skfill" data-w="92"></div>
-            </div><span class="skpct">92%</span>
-          </div>
-          <div class="skitem"><span class="skname">.NET / ASP.NET</span>
-            <div class="skbar">
-              <div class="skfill" data-w="90"></div>
-            </div><span class="skpct">90%</span>
-          </div>
-          <div class="skitem"><span class="skname">Angular</span>
-            <div class="skbar">
-              <div class="skfill" data-w="88"></div>
-            </div><span class="skpct">88%</span>
-          </div>
-          <div class="skitem"><span class="skname">Symfony / WordPress</span>
-            <div class="skbar">
-              <div class="skfill" data-w="85"></div>
-            </div><span class="skpct">85%</span>
-          </div>
-        </div>
-        <div class="skcard">
-          <div class="skcard-n">03</div>
-          <div class="skcard-t"><span class="lang-en">Data &amp; DevOps</span><span class="lang-fr">Donnees &amp;
-              DevOps</span></div>
-          <div class="skitem"><span class="skname">MySQL / PostgreSQL</span>
-            <div class="skbar">
-              <div class="skfill" data-w="90"></div>
-            </div><span class="skpct">90%</span>
-          </div>
-          <div class="skitem"><span class="skname">Docker / Jenkins</span>
-            <div class="skbar">
-              <div class="skfill" data-w="85"></div>
-            </div><span class="skpct">85%</span>
-          </div>
-          <div class="skitem"><span class="skname">Git / GitHub</span>
-            <div class="skbar">
-              <div class="skfill" data-w="92"></div>
-            </div><span class="skpct">92%</span>
-          </div>
-          <div class="skitem"><span class="skname">Agile / Scrum</span>
-            <div class="skbar">
-              <div class="skfill" data-w="88"></div>
-            </div><span class="skpct">88%</span>
+          <div class="sk-col rv d3">
+            <div class="sk-head"><span class="sk-num">03</span><span class="lang-en">Data &amp; DevOps</span><span
+                class="lang-fr">Données &amp; DevOps</span></div>
+            <div class="sk-item"><span>MySQL / PostgreSQL</span>
+              <div class="bar">
+                <div class="bar-fill" data-w="90"></div>
+              </div><span class="pct">90</span>
+            </div>
+            <div class="sk-item"><span>Docker / Jenkins</span>
+              <div class="bar">
+                <div class="bar-fill" data-w="85"></div>
+              </div><span class="pct">85</span>
+            </div>
+            <div class="sk-item"><span>Git / GitHub</span>
+              <div class="bar">
+                <div class="bar-fill" data-w="92"></div>
+              </div><span class="pct">92</span>
+            </div>
+            <div class="sk-item"><span>Agile / Scrum</span>
+              <div class="bar">
+                <div class="bar-fill" data-w="88"></div>
+              </div><span class="pct">88</span>
+            </div>
           </div>
         </div>
       </div>
     </section>
-
-    <hr class="divider">
 
     <!-- EXPERIENCE -->
     <section id="experience" class="section">
-      <div class="ch"><span class="lang-en">04 - Experience</span><span class="lang-fr">04 - Experience</span></div>
-      <h2 class="stitle rv">
-        <span class="lang-en">Professional <em>journey</em></span>
-        <span class="lang-fr">Parcours <em>professionnel</em></span>
-      </h2>
-      <div class="timeline">
+      <div class="sw">
+        <div class="sec-label rv"><span class="lnum">04</span><span class="lang-en">Experience</span><span
+            class="lang-fr">Expérience</span></div>
+        <h2 class="sec-title rv">
+          <span class="lang-en">Professional <em>journey</em></span>
+          <span class="lang-fr">Parcours <em>professionnel</em></span>
+        </h2>
+        <div class="exp-list">
 
-        <div class="exp-entry rv">
-          <div class="exp-meta">
-            <div class="exp-date">2026 — <span class="lang-en">Present</span><span class="lang-fr">Present</span></div>
-            <div class="exp-loc"><span class="lang-en">Tunis, Tunisia · Hybrid</span><span class="lang-fr">Tunis, Tunisie · Hybride</span></div>
-          </div>
-          <div>
-            <div class="exp-co">LIGHT MY WEB</div>
-            <div class="exp-role"><span class="lang-en">Frontend Engineer</span><span class="lang-fr">Ingenieure Frontend</span></div>
-            <ul class="exp-items">
-              <li class="exp-item"><span class="lang-en">Full-time frontend engineering role focused on creating dynamic, responsive web interfaces and delivering high-quality user experiences.</span><span class="lang-fr">Role d'ingenierie frontend a temps plein axe sur la creation d'interfaces web dynamiques et reactives et la livraison d'experiences utilisateur de haute qualite.</span></li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="exp-entry rv d1">
-          <div class="exp-meta">
-            <div class="exp-date">2025 — 2026</div>
-            <div class="exp-loc"><span class="lang-en">Nancy, France · Remote</span><span class="lang-fr">Nancy, France · A distance</span></div>
-          </div>
-          <div>
-            <div class="exp-co">MC MEISTE CAPITAL</div>
-            <div class="exp-role"><span class="lang-en">Full Stack Engineer</span><span class="lang-fr">Ingenieure Full Stack</span></div>
-            <ul class="exp-items">
-              <li class="exp-item"><span class="lang-en">Led development of scalable web applications using Symfony and WordPress for enterprise-level projects, delivering event management and e-commerce solutions.</span><span class="lang-fr">Developpement d'applications web scalables avec Symfony et WordPress pour des projets d'entreprise - gestion d'evenements et solutions e-commerce.</span></li>
-            </ul>
-            <div class="exp-tags">
-              <span class="tag">Symfony</span><span class="tag">React.js</span><span class="tag">SQL</span><span class="tag">WordPress</span><span class="tag">JavaScript</span><span class="tag">Agile</span>
+          <div class="exp-row rv hover-target" data-label="2026">
+            <div class="exp-meta">
+              <div class="exp-yr">2026</div>
+              <div class="exp-to lang-en">Present</div>
+              <div class="exp-to lang-fr">Présent</div>
+              <div class="exp-loc">Tunis · Hybrid</div>
+            </div>
+            <div class="exp-body">
+              <div class="exp-co">Light My Web</div>
+              <div class="exp-role lang-en">Frontend Engineer</div>
+              <div class="exp-role lang-fr">Ingénieure Frontend</div>
+              <p class="exp-desc lang-en">Full-time frontend engineering focused on dynamic, responsive web interfaces
+                and high-quality user experiences.</p>
+              <p class="exp-desc lang-fr">Ingénierie frontend axée sur les interfaces web dynamiques et les expériences
+                utilisateur de haute qualité.</p>
             </div>
           </div>
-        </div>
 
-        <div class="exp-entry rv d2">
-          <div class="exp-meta">
-            <div class="exp-date">2024 — 2025</div>
-            <div class="exp-loc"><span class="lang-en">Tunis, Tunisia</span><span class="lang-fr">Tunis, Tunisie</span></div>
-          </div>
-          <div>
-            <div class="exp-co">EASY COMPUTER & TECHNOLOGY</div>
-            <div class="exp-role"><span class="lang-en">Software Engineer</span><span class="lang-fr">Ingenieure Logicielle</span></div>
-            <ul class="exp-items">
-              <li class="exp-item"><span class="lang-en">Developed and deployed robust web applications using .NET framework and ASP.NET.</span><span class="lang-fr">Developpement et deploiement d'applications web robustes avec le framework .NET et ASP.NET.</span></li>
-              <li class="exp-item"><span class="lang-en">Managed SQL Server databases and applied Agile software design patterns.</span><span class="lang-fr">Gestion de bases de donnees SQL Server et application de modeles de conception logicielle Agile.</span></li>
-            </ul>
-            <div class="exp-tags">
-              <span class="tag">.NET Framework</span><span class="tag">ASP.NET</span><span class="tag">SQL Server</span><span class="tag">Git</span><span class="tag">Agile</span>
+          <div class="exp-row rv d1 hover-target" data-label="2025">
+            <div class="exp-meta">
+              <div class="exp-yr">2025–26</div>
+              <div class="exp-loc">Nancy · Remote</div>
+            </div>
+            <div class="exp-body">
+              <div class="exp-co">MC Meiste Capital</div>
+              <div class="exp-role lang-en">Full Stack Engineer</div>
+              <div class="exp-role lang-fr">Ingénieure Full Stack</div>
+              <p class="exp-desc lang-en">Led development of scalable web apps using Symfony and WordPress — event
+                management and e-commerce solutions for enterprise clients.</p>
+              <p class="exp-desc lang-fr">Développement d'applications web scalables avec Symfony et WordPress —
+                événementiel et e-commerce pour clients entreprise.</p>
+              <div class="exp-tags">
+                <span>Symfony</span><span>React</span><span>WordPress</span><span>SQL</span><span>Agile</span></div>
             </div>
           </div>
-        </div>
 
-        <div class="exp-entry rv d3">
-          <div class="exp-meta">
-            <div class="exp-date">2023 — 2024</div>
-            <div class="exp-loc"><span class="lang-en">France · Remote</span><span class="lang-fr">France · A distance</span></div>
-          </div>
-          <div>
-            <div class="exp-co">FREELANCE</div>
-            <div class="exp-role"><span class="lang-en">Full Stack Engineer</span><span class="lang-fr">Ingenieure Full Stack</span></div>
-            <ul class="exp-items">
-              <li class="exp-item"><span class="lang-en">Frontend Development: Utilizing Angular to create responsive and user-friendly interfaces.</span><span class="lang-fr">Developpement Frontend : Utilisation d'Angular pour creer des interfaces reactives et conviviales.</span></li>
-              <li class="exp-item"><span class="lang-en">Backend Development: Implementing robust server-side logic with Spring Boot to manage data.</span><span class="lang-fr">Developpement Backend : Implementation de logique serveur robuste avec Spring Boot pour gerer les donnees.</span></li>
-              <li class="exp-item"><span class="lang-en">Database & API: Designing secure databases and integrating third-party APIs to enhance functionality.</span><span class="lang-fr">Base de donnees & API : Conception de bases de donnees securisees et integration d'API tierces.</span></li>
-              <li class="exp-item"><span class="lang-en">Security & Deployment: Ensuring data security compliance and streamlining the software development lifecycle from commit to deployment.</span><span class="lang-fr">Securite & Deploiement : Garantie de la conformite de la securite des donnees et rationalisation du cycle de vie de developpement.</span></li>
-            </ul>
-            <div class="exp-tags">
-              <span class="tag">Angular</span><span class="tag">Spring Boot</span><span class="tag">Microservices</span><span class="tag">Web API</span><span class="tag">Git</span><span class="tag">Agile</span>
+          <div class="exp-row rv d2 hover-target" data-label="2024">
+            <div class="exp-meta">
+              <div class="exp-yr">2024–25</div>
+              <div class="exp-loc">Tunis</div>
+            </div>
+            <div class="exp-body">
+              <div class="exp-co">Easy Computer &amp; Technology</div>
+              <div class="exp-role lang-en">Software Engineer</div>
+              <div class="exp-role lang-fr">Ingénieure Logicielle</div>
+              <p class="exp-desc lang-en">Developed and deployed robust .NET and ASP.NET web applications. Managed SQL
+                Server databases with Agile design patterns.</p>
+              <p class="exp-desc lang-fr">Développement d'applications .NET et ASP.NET robustes. Gestion de bases de
+                données SQL Server, patterns Agile.</p>
+              <div class="exp-tags"><span>.NET</span><span>ASP.NET</span><span>SQL Server</span><span>Git</span></div>
             </div>
           </div>
-        </div>
 
-        <div class="exp-entry rv d4">
-          <div class="exp-meta">
-            <div class="exp-date">2023 — 2023</div>
-            <div class="exp-loc"><span class="lang-en">Tunisia · Hybrid</span><span class="lang-fr">Tunisie · Hybride</span></div>
-          </div>
-          <div>
-            <div class="exp-co">TRAIN YOUR MIND (TYM)</div>
-            <div class="exp-role"><span class="lang-en">Full Stack Engineer (Intern)</span><span class="lang-fr">Ingenieure Full Stack (Stage)</span></div>
-            <ul class="exp-items">
-              <li class="exp-item"><span class="lang-en">Developed server-side logic using Spring Boot and created a user-friendly interface with Angular.</span><span class="lang-fr">Developpement de la logique cote serveur avec Spring Boot et creation d'une interface conviviale avec Angular.</span></li>
-              <li class="exp-item"><span class="lang-en">Managed MySQL database, implemented secure RESTful APIs, and ensured user authentication.</span><span class="lang-fr">Gestion de base de donnees MySQL, implementation d'API RESTful securisees et authentification des utilisateurs.</span></li>
-              <li class="exp-item"><span class="lang-en">Tested and debugged the application, collaborated in Agile teams for requirements gathering, and documented processes.</span><span class="lang-fr">Test et debogage de l'application, collaboration en equipe Agile pour la collecte des exigences et la documentation.</span></li>
-            </ul>
-            <div class="exp-tags">
-              <span class="tag">Spring Boot</span><span class="tag">Angular</span><span class="tag">MySQL</span><span class="tag">Scrum</span>
+          <div class="exp-row rv d3 hover-target" data-label="2023">
+            <div class="exp-meta">
+              <div class="exp-yr">2023–24</div>
+              <div class="exp-loc">France · Remote</div>
+            </div>
+            <div class="exp-body">
+              <div class="exp-co">Freelance</div>
+              <div class="exp-role lang-en">Full Stack Engineer</div>
+              <div class="exp-role lang-fr">Ingénieure Full Stack</div>
+              <p class="exp-desc lang-en">Angular frontend, Spring Boot microservices backend, secure database design,
+                third-party API integration, and deployment pipelines.</p>
+              <p class="exp-desc lang-fr">Frontend Angular, microservices Spring Boot, bases sécurisées, intégration API
+                tierces et pipelines de déploiement.</p>
+              <div class="exp-tags"><span>Angular</span><span>Spring
+                  Boot</span><span>Microservices</span><span>Docker</span></div>
             </div>
           </div>
-        </div>
 
+          <div class="exp-row rv d4 hover-target" data-label="TYM">
+            <div class="exp-meta">
+              <div class="exp-yr">2023</div>
+              <div class="exp-loc">Tunisia · Hybrid</div>
+            </div>
+            <div class="exp-body">
+              <div class="exp-co">Train Your Mind (TYM)</div>
+              <div class="exp-role lang-en">Full Stack Intern</div>
+              <div class="exp-role lang-fr">Stagiaire Full Stack</div>
+              <p class="exp-desc lang-en">Spring Boot backend, Angular interface, MySQL database, secure RESTful APIs
+                with Agile-based requirements gathering.</p>
+              <p class="exp-desc lang-fr">Backend Spring Boot, interface Angular, MySQL, API RESTful sécurisées,
+                collecte exigences en équipe Agile.</p>
+              <div class="exp-tags"><span>Spring Boot</span><span>Angular</span><span>MySQL</span><span>Scrum</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
       </div>
     </section>
-
-    <hr class="divider">
 
     <!-- PROJECTS -->
-    <div id="projects-section">
-      <div id="proj-scroll">
-        <div id="proj-sticky">
+    <section id="projects" class="section s-alt">
+      <div class="sw">
+        <div class="sec-label rv"><span class="lnum">05</span><span class="lang-en">Selected Works</span><span
+            class="lang-fr">Projets Sélectionnés</span></div>
+        <h2 class="sec-title rv">
+          <span class="lang-en">Dev <em>portfolio</em></span>
+          <span class="lang-fr">Portfolio de <em>développement</em></span>
+        </h2>
+        <div class="bento">
 
-          <div class="section" style="padding-bottom:0; padding-top:80px;">
-            <div class="ch rv"><span class="lang-en">05 - Selected Works</span><span class="lang-fr">05 - Projets
-                Selectionnes</span></div>
-            <h2 class="stitle rv" style="margin-bottom:0;">
-              <span class="lang-en">Dev <em>portfolio</em></span>
-              <span class="lang-fr">Portfolio de <em>developpement</em></span>
-            </h2>
-          </div>
-
-          <div id="proj-track">
-
-            <!-- Slide 01 — Business & Travel -->
-            <div class="pslide">
-              <div class="pslide-media">
-                <div class="igrid s1"
-                  style="background: linear-gradient(135deg, var(--bg2) 0%, var(--surface) 100%); display:flex; align-items:center; justify-content:center; min-height:100%;">
-                  <div style="text-align:center; padding: 40px;">
-                    <i class="fas fa-plane-departure"
-                      style="font-size:84px; color:var(--accent); display:block; margin-bottom:24px; opacity:0.7;"></i>
-                    <div
-                      style="font-family:var(--mono); font-size:0.65rem; letter-spacing:0.25em; text-transform:uppercase; color:var(--text2);">
-                      Business & Travel · Management</div>
-                  </div>
-                </div>
+          <div class="bc wide rv tilt-card hover-target" data-label="VIEW">
+            <div class="bc-inner">
+              <div class="bc-num">01</div>
+              <div class="bc-ico"><i class="fas fa-plane-departure"></i></div>
+              <div class="bc-info">
+                <h3>Business &amp; Travel</h3>
+                <p class="lang-en">Platform enabling companies to discover travel partners. Smart matching, real-time
+                  messaging, Docker + Jenkins CI/CD.</p>
+                <p class="lang-fr">Plateforme de mise en relation entreprises-partenaires voyage. Matching intelligent,
+                  messagerie temps réel, Docker + Jenkins.</p>
               </div>
-              <div class="pslide-info" data-n="01">
-                <div class="pslide-num"><span class="lang-en">Project</span><span class="lang-fr">Projet</span> 01 / 08
-                </div>
-                <div class="pslide-title">Business &amp; Travel</div>
-                <p class="pslide-desc"><span class="lang-en">Platform enabling companies to discover and connect with
-                    travel partners. Features user authentication, smart partner matching, and real-time messaging.
-                    Deployed with Docker and Jenkins CI/CD pipelines.</span><span class="lang-fr">Plateforme permettant
-                    aux entreprises de trouver des partenaires de voyage. Authentification, matching intelligent et
-                    messagerie temps reel. Deploiement via Docker et Jenkins.</span></p>
-                <div class="pslide-tags">
-                  <span class="ptag">Spring Boot</span><span class="ptag">Angular</span><span
-                    class="ptag">MySQL</span><span class="ptag">Docker</span>
-                </div>
+              <div class="bc-tags"><span>Spring Boot</span><span>Angular</span><span>MySQL</span><span>Docker</span>
               </div>
             </div>
+          </div>
 
-            <!-- Slide 02 — GoRando -->
-            <div class="pslide">
-              <div class="pslide-media">
-                <div class="igrid s1"
-                  style="background: linear-gradient(135deg, var(--bg2) 0%, var(--surface) 100%); display:flex; align-items:center; justify-content:center; min-height:100%;">
-                  <div style="text-align:center; padding: 40px;">
-                    <i class="fas fa-hiking"
-                      style="font-size:84px; color:var(--accent); display:block; margin-bottom:24px; opacity:0.7;"></i>
-                    <div
-                      style="font-family:var(--mono); font-size:0.65rem; letter-spacing:0.25em; text-transform:uppercase; color:var(--text2);">
-                      GoRando · Hiking Platform</div>
-                  </div>
-                </div>
+          <div class="bc rv d1 tilt-card hover-target" data-label="VIEW">
+            <div class="bc-inner">
+              <div class="bc-num">02</div>
+              <div class="bc-ico"><i class="fas fa-hiking"></i></div>
+              <div class="bc-info">
+                <h3>GoRando</h3>
+                <p class="lang-en">Multi-platform hiking event management — MVC architecture, Symfony web + JavaFX
+                  desktop.</p>
+                <p class="lang-fr">Gestion d'événements randonnée multi-plateforme. MVC, Symfony web + JavaFX desktop.
+                </p>
               </div>
-              <div class="pslide-info" data-n="02">
-                <div class="pslide-num"><span class="lang-en">Project</span><span class="lang-fr">Projet</span> 02 / 08
-                </div>
-                <div class="pslide-title">GoRando</div>
-                <p class="pslide-desc"><span class="lang-en">Multi-platform event management system for hiking events —
-                    scheduling, registration, and notifications. Built on MVC architecture, delivered as both a web app
-                    (Symfony) and a JavaFX desktop application.</span><span class="lang-fr">Systeme de gestion
-                    d'evenements multi-plateforme pour randonnees — planification, inscription, notifications.
-                    Architecture MVC, livre en web (Symfony) et desktop JavaFX.</span></p>
-                <div class="pslide-tags">
-                  <span class="ptag">Symfony</span><span class="ptag">JavaFX</span><span class="ptag">MySQL</span>
-                </div>
+              <div class="bc-tags"><span>Symfony</span><span>JavaFX</span><span>MySQL</span></div>
+            </div>
+          </div>
+
+          <div class="bc rv d1 tilt-card hover-target" data-label="VIEW">
+            <div class="bc-inner">
+              <div class="bc-num">03</div>
+              <div class="bc-ico"><i class="fas fa-seedling"></i></div>
+              <div class="bc-info">
+                <h3>Smart Farm</h3>
+                <p class="lang-en">Farm management with livestock tracking, inventory control, real-time alerts. C# +
+                  DevExpress, MVC.</p>
+                <p class="lang-fr">Gestion agricole — suivi bétail, stocks, alertes temps réel. C# + DevExpress, MVC.
+                </p>
+              </div>
+              <div class="bc-tags"><span>C#</span><span>DevExpress</span><span>SQL Server</span></div>
+            </div>
+          </div>
+
+          <div class="bc tall rv d1 tilt-card hover-target" data-label="VIEW">
+            <div class="bc-inner">
+              <div class="bc-num">04</div>
+              <div class="bc-ico"><i class="fas fa-brain"></i></div>
+              <div class="bc-info">
+                <h3>TYM — Mental Health</h3>
+                <p class="lang-en">Final internship — Full Stack app for mental health specialists. JWT auth,
+                  confidential messaging, role-based access control.</p>
+                <p class="lang-fr">Stage fin d'études — app Full Stack pour spécialistes santé mentale. JWT, messagerie
+                  confidentielle, accès par rôle.</p>
+              </div>
+              <div class="bc-tags"><span>Spring Boot</span><span>Angular</span><span>JWT</span><span>PostgreSQL</span>
               </div>
             </div>
+          </div>
 
-            <!-- Slide 03 — Smart Farm -->
-            <div class="pslide">
-              <div class="pslide-media">
-                <div class="igrid s1"
-                  style="background: linear-gradient(135deg, var(--bg2) 0%, var(--surface) 100%); display:flex; align-items:center; justify-content:center; min-height:100%;">
-                  <div style="text-align:center; padding: 40px;">
-                    <i class="fas fa-seedling"
-                      style="font-size:84px; color:var(--accent); display:block; margin-bottom:24px; opacity:0.7;"></i>
-                    <div
-                      style="font-family:var(--mono); font-size:0.65rem; letter-spacing:0.25em; text-transform:uppercase; color:var(--text2);">
-                      Smart Farm · AgTech</div>
-                  </div>
-                </div>
+          <div class="bc rv d2 tilt-card hover-target" data-label="VIEW">
+            <div class="bc-inner">
+              <div class="bc-num">05</div>
+              <div class="bc-ico"><i class="fas fa-hand-holding-heart"></i></div>
+              <div class="bc-info">
+                <h3>DIPower</h3>
+                <p class="lang-en">Non-profit volunteer platform — registration, campaign tracking, secure payments,
+                  admin dashboard.</p>
+                <p class="lang-fr">Plateforme associative — bénévoles, campagnes, paiement sécurisé, tableau de bord
+                  admin.</p>
               </div>
-              <div class="pslide-info" data-n="03">
-                <div class="pslide-num"><span class="lang-en">Project</span><span class="lang-fr">Projet</span> 03 / 08
-                </div>
-                <div class="pslide-title">Smart Farm</div>
-                <p class="pslide-desc"><span class="lang-en">Farm management solution with livestock tracking, inventory
-                    control, and real-time alerts to optimize agricultural operations. Developed in C# with DevExpress
-                    on Ubuntu, following MVC architecture patterns.</span><span class="lang-fr">Solution de gestion
-                    agricole avec suivi du betail, gestion des stocks et alertes en temps reel. Developpee en C# avec
-                    DevExpress sur Ubuntu selon le pattern MVC.</span></p>
-                <div class="pslide-tags">
-                  <span class="ptag">C#</span><span class="ptag">DevExpress</span><span class="ptag">MVC</span><span
-                    class="ptag">SQL Server</span>
-                </div>
-              </div>
+              <div class="bc-tags"><span>Spring Boot</span><span>Angular</span><span>Stripe API</span></div>
             </div>
+          </div>
 
-            <!-- Slide 04 — TYM Mental Health -->
-            <div class="pslide">
-              <div class="pslide-media">
-                <div class="igrid s1"
-                  style="background: linear-gradient(135deg, var(--bg2) 0%, var(--surface) 100%); display:flex; align-items:center; justify-content:center; min-height:100%;">
-                  <div style="text-align:center; padding: 40px;">
-                    <i class="fas fa-brain"
-                      style="font-size:84px; color:var(--accent); display:block; margin-bottom:24px; opacity:0.7;"></i>
-                    <div
-                      style="font-family:var(--mono); font-size:0.65rem; letter-spacing:0.25em; text-transform:uppercase; color:var(--text2);">
-                      TYM · Mental Health Platform</div>
-                  </div>
-                </div>
+          <div class="bc rv d2 tilt-card hover-target" data-label="VIEW">
+            <div class="bc-inner">
+              <div class="bc-num">06</div>
+              <div class="bc-ico"><i class="fas fa-tshirt"></i></div>
+              <div class="bc-info">
+                <h3>ClothingApp</h3>
+                <p class="lang-en">Robust .NET app for clothing inventory and sales management. High performance,
+                  scalable. Open source.</p>
+                <p class="lang-fr">Application .NET robuste pour inventaire vêtements et ventes. Haute performance. Open
+                  source.</p>
               </div>
-              <div class="pslide-info" data-n="04">
-                <div class="pslide-num"><span class="lang-en">Project</span><span class="lang-fr">Projet</span> 04 / 08
-                </div>
-                <div class="pslide-title"><span class="lang-en">TYM — Mental Health App</span><span class="lang-fr">TYM
-                    — Sante Mentale</span></div>
-                <p class="pslide-desc"><span class="lang-en">Final internship — Full Stack web application for mental
-                    health specialists. Built with Spring Boot and Angular, featuring JWT authentication, confidential
-                    patient-specialist messaging, and role-based access control to ensure data privacy.</span><span
-                    class="lang-fr">Stage de fin d'etudes — application Full Stack pour specialistes en sante mentale.
-                    Spring Boot, Angular, authentification JWT, messagerie confidentielle et controle d'acces par
-                    role.</span></p>
-                <div class="pslide-tags">
-                  <span class="ptag">Spring Boot</span><span class="ptag">Angular</span><span
-                    class="ptag">JWT</span><span class="ptag">PostgreSQL</span>
-                </div>
-              </div>
+              <div class="bc-tags"><span>.NET</span><span>C#</span><span>GitHub</span></div>
             </div>
+          </div>
 
-            <!-- Slide 05 — DIPower -->
-            <div class="pslide">
-              <div class="pslide-media">
-                <div class="igrid s1"
-                  style="background: linear-gradient(135deg, var(--bg2) 0%, var(--surface) 100%); display:flex; align-items:center; justify-content:center; min-height:100%;">
-                  <div style="text-align:center; padding: 40px;">
-                    <i class="fas fa-hand-holding-heart"
-                      style="font-size:84px; color:var(--accent); display:block; margin-bottom:24px; opacity:0.7;"></i>
-                    <div
-                      style="font-family:var(--mono); font-size:0.65rem; letter-spacing:0.25em; text-transform:uppercase; color:var(--text2);">
-                      DIPower · Non-Profit Platform</div>
-                  </div>
-                </div>
+          <div class="bc rv d3 tilt-card hover-target" data-label="VIEW">
+            <div class="bc-inner">
+              <div class="bc-num">07</div>
+              <div class="bc-ico"><i class="fas fa-graduation-cap"></i></div>
+              <div class="bc-info">
+                <h3>E-Learning</h3>
+                <p class="lang-en">Online LMS with .NET/C# — interactive course delivery and robust student management.
+                  Open source.</p>
+                <p class="lang-fr">LMS en ligne avec .NET/C# — cours interactifs et gestion étudiants robuste. Open
+                  source.</p>
               </div>
-              <div class="pslide-info" data-n="05">
-                <div class="pslide-num"><span class="lang-en">Project</span><span class="lang-fr">Projet</span> 05 / 08
-                </div>
-                <div class="pslide-title"><span class="lang-en">DIPower — Volunteer Platform</span><span
-                    class="lang-fr">DIPower — Plateforme Benevolat</span></div>
-                <p class="pslide-desc"><span class="lang-en">Summer internship — Full Stack platform for a non-profit
-                    managing volunteers and online donations. Features volunteer registration, campaign tracking, secure
-                    payment integration, and an admin dashboard for real-time oversight.</span><span
-                    class="lang-fr">Stage d'ete — plateforme Full Stack pour une association — gestion des benevoles et
-                    dons en ligne, suivi de campagnes, paiement securise et tableau de bord admin.</span></p>
-                <div class="pslide-tags">
-                  <span class="ptag">Spring Boot</span><span class="ptag">Angular</span><span
-                    class="ptag">MySQL</span><span class="ptag">Stripe API</span>
-                </div>
-              </div>
+              <div class="bc-tags"><span>.NET</span><span>C#</span><span>MVC</span></div>
             </div>
+          </div>
 
-            <!-- Slide 06 — ClothingApp -->
-            <div class="pslide">
-              <div class="pslide-media">
-                <div class="igrid s1"
-                  style="background: linear-gradient(135deg, var(--bg2) 0%, var(--surface) 100%); display:flex; align-items:center; justify-content:center; min-height:100%;">
-                  <div style="text-align:center; padding: 40px;">
-                    <i class="fas fa-tshirt"
-                      style="font-size:84px; color:var(--accent); display:block; margin-bottom:24px; opacity:0.7;"></i>
-                    <div
-                      style="font-family:var(--mono); font-size:0.65rem; letter-spacing:0.25em; text-transform:uppercase; color:var(--text2);">
-                      ClothingApp · .NET Platform</div>
-                  </div>
-                </div>
+          <div class="bc rv d3 tilt-card hover-target" data-label="VIEW">
+            <div class="bc-inner">
+              <div class="bc-num">08</div>
+              <div class="bc-ico"><i class="fas fa-check-double"></i></div>
+              <div class="bc-info">
+                <h3>Todo App (NgRx)</h3>
+                <p class="lang-en">Modern task management with Angular &amp; NgRx reactive state. Clean UI, efficient
+                  state handling. Open source.</p>
+                <p class="lang-fr">Gestion de tâches moderne Angular &amp; NgRx. UI propre, gestion d'état efficace.
+                  Open source.</p>
               </div>
-              <div class="pslide-info" data-n="06">
-                <div class="pslide-num"><span class="lang-en">Project</span><span class="lang-fr">Projet</span> 06 / 08</div>
-                <div class="pslide-title">ClothingApp</div>
-                <p class="pslide-desc"><span class="lang-en">A robust .NET-based application designed for managing clothing inventory and sales. Built with C# to ensure high performance and scalability. Open source on GitHub.</span><span class="lang-fr">Une application robuste basee sur .NET concue pour gerer l'inventaire et les ventes de vetements. Construite avec C# pour assurer haute performance et evolutivite. Code source sur GitHub.</span></p>
-                <div class="pslide-tags">
-                  <span class="ptag">.NET</span><span class="ptag">C#</span><span class="ptag">GitHub</span>
-                </div>
-              </div>
+              <div class="bc-tags"><span>Angular</span><span>NgRx</span><span>TypeScript</span></div>
             </div>
-
-            <!-- Slide 07 — E-Learning -->
-            <div class="pslide">
-              <div class="pslide-media">
-                <div class="igrid s1"
-                  style="background: linear-gradient(135deg, var(--bg2) 0%, var(--surface) 100%); display:flex; align-items:center; justify-content:center; min-height:100%;">
-                  <div style="text-align:center; padding: 40px;">
-                    <i class="fas fa-graduation-cap"
-                      style="font-size:84px; color:var(--accent); display:block; margin-bottom:24px; opacity:0.7;"></i>
-                    <div
-                      style="font-family:var(--mono); font-size:0.65rem; letter-spacing:0.25em; text-transform:uppercase; color:var(--text2);">
-                      E_learning · EdTech</div>
-                  </div>
-                </div>
-              </div>
-              <div class="pslide-info" data-n="07">
-                <div class="pslide-num"><span class="lang-en">Project</span><span class="lang-fr">Projet</span> 07 / 08</div>
-                <div class="pslide-title">E-Learning</div>
-                <p class="pslide-desc"><span class="lang-en">An online learning management system developed with .NET/C#. Designed for interactive course delivery and robust student management. Open source on GitHub.</span><span class="lang-fr">Un systeme de gestion de l'apprentissage en ligne developpe avec .NET/C#. Concu pour la diffusion de cours interactifs et la gestion robuste des etudiants. Code source sur GitHub.</span></p>
-                <div class="pslide-tags">
-                  <span class="ptag">.NET</span><span class="ptag">C#</span><span class="ptag">GitHub</span>
-                </div>
-              </div>
-            </div>
-
-            <!-- Slide 08 — Todo App -->
-            <div class="pslide">
-              <div class="pslide-media">
-                <div class="igrid s1"
-                  style="background: linear-gradient(135deg, var(--bg2) 0%, var(--surface) 100%); display:flex; align-items:center; justify-content:center; min-height:100%;">
-                  <div style="text-align:center; padding: 40px;">
-                    <i class="fas fa-check-double"
-                      style="font-size:84px; color:var(--accent); display:block; margin-bottom:24px; opacity:0.7;"></i>
-                    <div
-                      style="font-family:var(--mono); font-size:0.65rem; letter-spacing:0.25em; text-transform:uppercase; color:var(--text2);">
-                      Todo App · Angular & NgRx</div>
-                  </div>
-                </div>
-              </div>
-              <div class="pslide-info" data-n="08">
-                <div class="pslide-num"><span class="lang-en">Project</span><span class="lang-fr">Projet</span> 08 / 08</div>
-                <div class="pslide-title">Todo App (NgRx)</div>
-                <p class="pslide-desc"><span class="lang-en">A modern task management frontend using Angular and NgRx for reactive state management. Clean UI and efficient state handling. Open source on GitHub.</span><span class="lang-fr">Une interface moderne de gestion des taches utilisant Angular et NgRx pour la gestion reactive de l'etat. Interface utilisateur propre et gestion efficace. Code source sur GitHub.</span></p>
-                <div class="pslide-tags">
-                  <span class="ptag">Angular</span><span class="ptag">NgRx</span><span class="ptag">HTML</span>
-                </div>
-              </div>
-            </div>
-
-          </div><!-- /track -->
-
-          <div class="proj-ui">
-            <span class="proj-hint lang-en">Scroll to explore</span>
-            <span class="proj-hint lang-fr">Defiler pour explorer</span>
-            <div class="proj-pbar">
-              <div class="proj-pfill" id="projFill"></div>
-            </div>
-            <span class="proj-counter"><span id="projCur">1</span> / 8</span>
           </div>
 
-        </div><!-- /sticky -->
-      </div><!-- /proj-scroll -->
-    </div><!-- /projects-section -->
-
-    <hr class="divider" style="margin-top:0;">
-
-    <!-- GITHUB REPOS -->
-    <section id="github-repos" class="section">
-      <div class="ch"><span class="lang-en">06 - GitHub Repositories</span><span class="lang-fr">06 - Dépôts GitHub</span></div>
-      <h2 class="stitle rv">
-        <span class="lang-en">Explore my <em>code</em></span>
-        <span class="lang-fr">Explorez mon <em>code</em></span>
-      </h2>
-      
-      <div class="repo-grid rv d1">
-        <!-- Project 1 -->
-        <a href="https://github.com/yosradab/TYM-BACKEND" target="_blank" class="repo-card">
-          <div class="repo-top">
-            <i class="fab fa-github repo-git"></i>
-            <i class="fas fa-external-link-alt repo-ext"></i>
-          </div>
-          <h3 class="repo-title">TYM BACKEND</h3>
-          <p class="repo-desc">
-            <span class="lang-en">Robust backend for mental health application with Spring Boot, JWT security, and PostgreSQL.</span>
-            <span class="lang-fr">Backend robuste pour application de santé mentale avec Spring Boot, sécurité JWT et PostgreSQL.</span>
-          </p>
-          <div class="repo-tags">
-            <span>Spring Boot</span><span>JWT</span><span>PostgreSQL</span>
-          </div>
-        </a>
-
-        <!-- Project 2 -->
-        <a href="https://github.com/yosradab/ClothingApp" target="_blank" class="repo-card">
-          <div class="repo-top">
-            <i class="fab fa-github repo-git"></i>
-            <i class="fas fa-external-link-alt repo-ext"></i>
-          </div>
-          <h3 class="repo-title">ClothingApp</h3>
-          <p class="repo-desc">
-            <span class="lang-en">E-commerce backend features for inventory management and sales processing using C#.</span>
-            <span class="lang-fr">Backend e-commerce pour la gestion des stocks et des ventes en utilisant C#.</span>
-          </p>
-          <div class="repo-tags">
-            <span>C#</span><span>.NET</span><span>SQL Server</span>
-          </div>
-        </a>
-
-        <!-- Project 3 -->
-        <a href="https://github.com/yosradab/E_learning" target="_blank" class="repo-card">
-          <div class="repo-top">
-            <i class="fab fa-github repo-git"></i>
-            <i class="fas fa-external-link-alt repo-ext"></i>
-          </div>
-          <h3 class="repo-title">E-Learning</h3>
-          <p class="repo-desc">
-            <span class="lang-en">Interactive educational platform with secure student management and course delivery.</span>
-            <span class="lang-fr">Plateforme éducative interactive avec gestion sécurisée des étudiants.</span>
-          </p>
-          <div class="repo-tags">
-            <span>ASP.NET</span><span>C#</span><span>MVC</span>
-          </div>
-        </a>
-
-        <!-- Project 4 -->
-        <a href="https://github.com/yosradab/GoRando-symfony-javafx-" target="_blank" class="repo-card">
-          <div class="repo-top">
-            <i class="fab fa-github repo-git"></i>
-            <i class="fas fa-external-link-alt repo-ext"></i>
-          </div>
-          <h3 class="repo-title">GoRando-symfony-javafx-</h3>
-          <p class="repo-desc">
-            <span class="lang-en">Multi-platform hiking management system with Symfony web app and JavaFX desktop client.</span>
-            <span class="lang-fr">Système de gestion de randonnée multi-plateforme avec app Symfony et client JavaFX.</span>
-          </p>
-          <div class="repo-tags">
-            <span>Symfony</span><span>JavaFX</span><span>Java</span>
-          </div>
-        </a>
-      </div>
-
-      <div class="repo-action rv d2">
-        <a href="https://github.com/yosradab" target="_blank" class="btn btn-primary">
-          <span class="lang-en">Explore More on GitHub</span>
-          <span class="lang-fr">Voir plus sur GitHub</span>
-          <i class="fab fa-github"></i>
-        </a>
+        </div>
       </div>
     </section>
 
-    <hr class="divider" style="margin-top:0;">
+    <!-- GITHUB -->
+    <section id="github" class="section">
+      <div class="sw">
+        <div class="sec-label rv"><span class="lnum">06</span><span class="lang-en">Open Source</span><span
+            class="lang-fr">Open Source</span></div>
+        <h2 class="sec-title rv">
+          <span class="lang-en">Explore my <em>code</em></span>
+          <span class="lang-fr">Explorez mon <em>code</em></span>
+        </h2>
+        <div class="repo-grid">
+          <a href="https://github.com/yosradab/TYM-BACKEND" target="_blank" class="repo-card rv hover-target"
+            data-label="OPEN">
+            <div class="repo-top"><i class="fab fa-github"></i><i class="fas fa-arrow-up-right-from-square"></i></div>
+            <div class="repo-title">TYM Backend</div>
+            <p class="repo-desc lang-en">Robust backend for mental health app — Spring Boot, JWT, PostgreSQL.</p>
+            <p class="repo-desc lang-fr">Backend application santé mentale — Spring Boot, JWT, PostgreSQL.</p>
+            <div class="repo-lang"><span class="dot dot-java"></span>Java</div>
+          </a>
+          <a href="https://github.com/yosradab/ClothingApp" target="_blank" class="repo-card rv d1 hover-target"
+            data-label="OPEN">
+            <div class="repo-top"><i class="fab fa-github"></i><i class="fas fa-arrow-up-right-from-square"></i></div>
+            <div class="repo-title">ClothingApp</div>
+            <p class="repo-desc lang-en">E-commerce inventory and sales with C# and .NET.</p>
+            <p class="repo-desc lang-fr">Gestion stocks e-commerce en C# et .NET.</p>
+            <div class="repo-lang"><span class="dot dot-cs"></span>C#</div>
+          </a>
+          <a href="https://github.com/yosradab/E_learning" target="_blank" class="repo-card rv d2 hover-target"
+            data-label="OPEN">
+            <div class="repo-top"><i class="fab fa-github"></i><i class="fas fa-arrow-up-right-from-square"></i></div>
+            <div class="repo-title">E-Learning</div>
+            <p class="repo-desc lang-en">Interactive educational platform — ASP.NET, C#, MVC.</p>
+            <p class="repo-desc lang-fr">Plateforme éducative interactive — ASP.NET, C#, MVC.</p>
+            <div class="repo-lang"><span class="dot dot-cs"></span>C#</div>
+          </a>
+          <a href="https://github.com/yosradab/GoRando-symfony-javafx-" target="_blank"
+            class="repo-card rv d3 hover-target" data-label="OPEN">
+            <div class="repo-top"><i class="fab fa-github"></i><i class="fas fa-arrow-up-right-from-square"></i></div>
+            <div class="repo-title">GoRando</div>
+            <p class="repo-desc lang-en">Multi-platform hiking management — Symfony + JavaFX.</p>
+            <p class="repo-desc lang-fr">Gestion randonnée multi-plateforme — Symfony + JavaFX.</p>
+            <div class="repo-lang"><span class="dot dot-php"></span>PHP &amp; Java</div>
+          </a>
+        </div>
+        <div class="repo-cta rv d2">
+          <a href="https://github.com/yosradab" target="_blank" class="btn-outline hover-target" data-label="GH">
+            <i class="fab fa-github"></i>
+            <span class="lang-en">All repos on GitHub</span><span class="lang-fr">Tous les dépôts</span>
+          </a>
+        </div>
+      </div>
+    </section>
 
     <!-- EDUCATION -->
-    <section id="education" class="section">
-      <div class="ch"><span class="lang-en">06 - Education</span><span class="lang-fr">06 - Formation</span></div>
-      <h2 class="stitle rv">
-        <span class="lang-en">Academic <em>foundation</em></span>
-        <span class="lang-fr">Fondations <em>academiques</em></span>
-      </h2>
-      <div class="edu-grid rv d1">
-        <div class="edu-card">
-          <div class="edu-yr">2020 - 2024</div>
-          <div class="edu-deg"><span class="lang-en">Software Engineering Degree</span><span class="lang-fr">Diplome
-              d'Ingenieur Logiciel</span></div>
-          <div class="edu-sch">
-            <span class="lang-en">ESPRIT<br>Ecole Superieure Privee d'Ingenierie et de Technologies<br>Tunis,
-              Tunisia</span>
-            <span class="lang-fr">ESPRIT<br>Ecole Superieure Privee d'Ingenierie et de Technologies<br>Tunis,
-              Tunisie</span>
+    <section id="education" class="section s-alt">
+      <div class="sw">
+        <div class="sec-label rv"><span class="lnum">07</span><span class="lang-en">Education</span><span
+            class="lang-fr">Formation</span></div>
+        <h2 class="sec-title rv">
+          <span class="lang-en">Academic <em>foundation</em></span>
+          <span class="lang-fr">Fondations <em>académiques</em></span>
+        </h2>
+        <div class="edu-grid">
+          <div class="edu-card rv d1 hover-target" data-label="ESPRIT">
+            <div class="edu-yr">2020 – 2024</div>
+            <div class="edu-deg lang-en">Software Engineering Degree</div>
+            <div class="edu-deg lang-fr">Diplôme d'Ingénieur Logiciel</div>
+            <div class="edu-school">ESPRIT</div>
+            <div class="edu-sub">École Supérieure Privée d'Ingénierie et de Technologies · Tunis, Tunisia</div>
+          </div>
+          <div class="edu-card rv d2 hover-target" data-label="MPSI">
+            <div class="edu-yr">2018 – 2020</div>
+            <div class="edu-deg">MPSI</div>
+            <div class="edu-school">ULT</div>
+            <div class="edu-sub lang-en">Preparatory Diploma — Mathematics, Physics &amp; Engineering Sciences</div>
+            <div class="edu-sub lang-fr">Diplôme Préparatoire — Mathématiques, Physique et Sciences de l'Ingénieur</div>
           </div>
         </div>
-        <div class="edu-card">
-          <div class="edu-yr">2018 - 2020</div>
-          <div class="edu-deg">MPSI</div>
-          <div class="edu-sch">
-            <span class="lang-en">ULT<br>Preparatory Diploma — Mathematics, Physics and Engineering
-              Sciences<br>Tunisia</span>
-            <span class="lang-fr">ULT<br>Diplome Preparatoire — Mathematiques, Physique et Sciences de
-              l'Ingenieur<br>Tunisie</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- Internship Highlights -->
-      <div style="margin-top:64px;" class="rv d2">
-        <div class="ch"><span class="lang-en">Internship Highlights</span><span class="lang-fr">Stages Notables</span>
-        </div>
-        <div
-          style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:1px; background:var(--border); border:1px solid var(--border); margin-top:24px;">
-          <div class="edu-card">
-            <div class="edu-yr">TYM · 2024</div>
-            <div class="edu-deg" style="font-size:1.1rem;"><span class="lang-en">Final Internship</span><span
-                class="lang-fr">Stage de Fin d'Etudes</span></div>
-            <div class="edu-sch"><span class="lang-en">Full Stack app for mental health specialists — JWT auth,
-                confidential messaging, role-based access</span><span class="lang-fr">App Full Stack pour specialistes
-                en sante mentale — auth JWT, messagerie confidentielle, acces par role</span></div>
-          </div>
-          <div class="edu-card">
-            <div class="edu-yr">DIPower · 2023</div>
-            <div class="edu-deg" style="font-size:1.1rem;"><span class="lang-en">Summer Internship</span><span
-                class="lang-fr">Stage d'Ete</span></div>
-            <div class="edu-sch"><span class="lang-en">Non-profit platform for volunteer management and online donation
-                processing</span><span class="lang-fr">Plateforme associative pour la gestion des benevoles et des dons
-                en ligne</span></div>
-          </div>
-          <div class="edu-card">
-            <div class="edu-yr">TTeleccom · 2022</div>
-            <div class="edu-deg" style="font-size:1.1rem;"><span class="lang-en">Summer Internship</span><span
-                class="lang-fr">Stage d'Ete</span></div>
-            <div class="edu-sch"><span class="lang-en">Backend development with Spring Boot — user interaction workflows
-                and secure data handling</span><span class="lang-fr">Developpement backend avec Spring Boot — flux
-                d'interaction utilisateur et gestion securisee des donnees</span></div>
+        <div class="internship-row rv d2">
+          <div class="int-head lang-en">Internship Highlights</div>
+          <div class="int-head lang-fr">Stages Notables</div>
+          <div class="int-list">
+            <div class="int-card hover-target" data-label="TYM">
+              <div class="int-co">TYM · 2024</div>
+              <div class="int-role lang-en">Final Internship</div>
+              <div class="int-role lang-fr">Stage Fin d'Études</div>
+              <p class="int-desc lang-en">Full Stack for mental health specialists — JWT, confidential messaging,
+                role-based access.</p>
+              <p class="int-desc lang-fr">App Full Stack spécialistes santé mentale — JWT, messagerie confidentielle,
+                accès par rôle.</p>
+            </div>
+            <div class="int-card hover-target" data-label="DIP">
+              <div class="int-co">DIPower · 2023</div>
+              <div class="int-role lang-en">Summer Internship</div>
+              <div class="int-role lang-fr">Stage d'Été</div>
+              <p class="int-desc lang-en">Non-profit platform for volunteer management and online donation processing.
+              </p>
+              <p class="int-desc lang-fr">Plateforme associative — gestion bénévoles et dons en ligne.</p>
+            </div>
+            <div class="int-card hover-target" data-label="TT">
+              <div class="int-co">TTeleccom · 2022</div>
+              <div class="int-role lang-en">Summer Internship</div>
+              <div class="int-role lang-fr">Stage d'Été</div>
+              <p class="int-desc lang-en">Spring Boot backend development — user workflows and secure data handling.</p>
+              <p class="int-desc lang-fr">Développement backend Spring Boot — flux utilisateur et gestion sécurisée des
+                données.</p>
+            </div>
           </div>
         </div>
       </div>
-
     </section>
 
   </main>
 
   <!-- FOOTER -->
   <footer>
-    <div class="footer-inner">
-      <div>
-        <h2 class="footer-hl">
+    <div class="ft-inner">
+      <div class="ft-left">
+        <div class="ft-eyebrow rv lang-en">Let's connect</div>
+        <div class="ft-eyebrow rv lang-fr">Contactez-moi</div>
+        <h2 class="ft-hl rv">
           <span class="lang-en">Let's build<br>something <em>great</em></span>
           <span class="lang-fr">Construisons<br>quelque chose <em>d'excellent</em></span>
         </h2>
-        <p class="footer-sub">
-          <span class="lang-en">Open to new opportunities in full stack development, web engineering, and freelance
-            collaborations.</span>
-          <span class="lang-fr">Ouverte a de nouvelles opportunites en developpement full stack, ingenierie web et
-            collaborations freelance.</span>
-        </p>
+        <p class="ft-sub rv d1 lang-en">Open to opportunities in full stack development, web engineering, and freelance
+          collaborations.</p>
+        <p class="ft-sub rv d1 lang-fr">Ouverte aux opportunités en développement full stack, ingénierie web et
+          collaborations freelance.</p>
+        <a href="mailto:dabyosra@gmail.com" class="btn-lime big rv d2 hover-target" data-label="MAIL">
+          <span>dabyosra@gmail.com</span><i class="fas fa-arrow-right"></i>
+        </a>
       </div>
-      <div class="flinks">
-        <a href="mailto:dabyosra@gmail.com" class="flink">
-          <div class="flink-ico"><i class="fas fa-envelope"></i></div>
-          dabyosra@gmail.com
-          <a href="https://www.linkedin.com/in/yosradab/" target="_blank" class="flink">
-            <div class="flink-ico"><i class="fab fa-linkedin-in"></i></div>
-            linkedin.com/in/yosradab
-          </a>
-          <a href="https://github.com/yosradab" target="_blank" class="flink">
-            <div class="flink-ico"><i class="fab fa-github"></i></div>
-            github.com/yosradab
-          </a>
-          <a href="tel:+21623309333" class="flink">
-            <div class="flink-ico"><i class="fas fa-phone"></i></div>
-            +216 23 309 333
-          </a>
+      <div class="ft-links rv d1">
+        <a href="https://www.linkedin.com/in/yosradab/" target="_blank" class="flink hover-target" data-label="LI">
+          <div class="flink-ico"><i class="fab fa-linkedin-in"></i></div>
+          <span>linkedin.com/in/yosradab</span>
+          <i class="fas fa-arrow-up-right-from-square flink-ext"></i>
+        </a>
+        <a href="https://github.com/yosradab" target="_blank" class="flink hover-target" data-label="GH">
+          <div class="flink-ico"><i class="fab fa-github"></i></div>
+          <span>github.com/yosradab</span>
+          <i class="fas fa-arrow-up-right-from-square flink-ext"></i>
+        </a>
+        <a href="tel:+21623309333" class="flink hover-target" data-label="CALL">
+          <div class="flink-ico"><i class="fas fa-phone"></i></div>
+          <span>+216 23 309 333</span>
+        </a>
       </div>
-      <div class="fcopy">
-        <span>2025 Yosra DAB — Full Stack Software Engineer</span>
-        <span>Build · Ship · Iterate</span>
-      </div>
+    </div>
+    <div class="ft-copy">
+      <span>© 2025 Yosra DAB</span>
+      <span>Full Stack Software Engineer</span>
+      <span>Build · Ship · Iterate</span>
     </div>
   </footer>
 
-  <!-- MODAL -->
-  <div class="modal" id="modal">
-    <div class="modal-backdrop" id="modalBackdrop"></div>
-    <div class="modal-card" id="modalCard">
-      <div class="modal-topbar">
-        <span class="modal-label lang-en">Project Gallery</span>
-        <span class="modal-label lang-fr">Galerie du Projet</span>
-        <div id="modalCounter" style="color:var(--accent); font-family:var(--mono); font-size:0.6rem; margin:0 15px;">1
-          / 1</div>
-        <button class="modal-x" id="modalClose"><i class="fas fa-times"></i></button>
-      </div>
-      <div class="modal-img-wrap" id="modalImgWrap"></div>
-      <button class="modal-nav prev" id="modalPrev"><i class="fas fa-chevron-left"></i></button>
-      <button class="modal-nav next" id="modalNext"><i class="fas fa-chevron-right"></i></button>
-    </div>
-  </div>
-
   <script src="script.js"></script>
 </body>
-developer: Yosra Dab
 
 </html>
