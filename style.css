@@ -876,6 +876,9 @@ html.light #site-header {
   border:1px solid var(--border);
   overflow:hidden;
   position:relative;
+  display:block;
+  color:inherit;
+  text-decoration:none;
   transition: border-color .3s, box-shadow .3s;
   transform-style:preserve-3d;
   will-change:transform;
@@ -885,6 +888,37 @@ html.light #site-header {
 .bc:hover {
   border-color: var(--lime);
   box-shadow:0 0 32px rgba(200,255,0,.1), inset 0 0 32px rgba(200,255,0,.03);
+}
+
+/* Featured/highlighted project card (e.g. the AI · MCP demo) */
+.bc.featured {
+  background: linear-gradient(135deg, var(--surface) 0%, var(--lime-lo) 100%);
+  border-color: var(--border2);
+  animation: featuredPulse 3.5s ease-in-out infinite;
+}
+.bc.featured:hover {
+  border-color: var(--lime);
+  box-shadow:0 0 44px rgba(255,105,180,.22), inset 0 0 44px rgba(255,105,180,.06);
+}
+@keyframes featuredPulse {
+  0%,100% { box-shadow:0 0 0 rgba(255,105,180,0); }
+  50%      { box-shadow:0 0 28px rgba(255,105,180,.12); }
+}
+.bc-badge {
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  align-self:flex-start;
+  font-family: var(--mono);
+  font-size:.5rem;
+  letter-spacing:.16em;
+  text-transform:uppercase;
+  color:#000;
+  background: var(--lime);
+  padding:7px 14px;
+  border-radius:100px;
+  box-shadow:0 0 18px rgba(255,105,180,.4);
+  margin-bottom:auto;
 }
 .bc-inner {
   height:100%;
@@ -923,6 +957,7 @@ html.light #site-header {
   line-height:1.75;
   max-width:420px;
 }
+.bc.featured .bc-info p { max-width:640px; }
 .bc-tags {
   display:flex; gap:8px; flex-wrap:wrap;
 }
@@ -989,6 +1024,7 @@ html.light #site-header {
 .dot-java  { background:#F89820; }
 .dot-cs    { background:#9B4F96; }
 .dot-php   { background:#777BB3; }
+.dot-py    { background:#3776AB; }
 .repo-cta { margin-top:40px; text-align:center; }
 
 /* ══════════════════════════════════
