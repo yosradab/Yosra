@@ -598,6 +598,34 @@ html.light #site-header {
 .spec-arr { margin-left:auto; color: var(--text3); font-size:.7rem; transition: all .3s; }
 .spec-item:hover .spec-arr { color: var(--lime); transform:translateX(4px); }
 
+/* ─── DOMAINS ─── */
+.domains-grid {
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:12px;
+  margin-top:8px;
+}
+.domain-item {
+  display:flex; align-items:center; gap:14px;
+  padding:18px 20px;
+  border:1px solid var(--border2);
+  transition: all .3s;
+}
+.domain-item i {
+  color: var(--lime);
+  font-size:1rem;
+  flex-shrink:0;
+}
+.domain-item span {
+  font-family: var(--mono);
+  font-size:.6rem;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  color: var(--text2);
+}
+.domain-item:hover { border-color: var(--lime); background: var(--lime-lo); }
+.domain-item:hover span { color: var(--text); }
+
 /* ══════════════════════════════════
    SHOWCASE — Featured Freelance Work
 ══════════════════════════════════ */
@@ -758,27 +786,17 @@ html.light #site-header {
   border-bottom:1px solid var(--border);
 }
 .sk-item:last-child { border-bottom:none; }
-.sk-item > span:first-child {
+.sk-item i {
+  color: var(--lime);
+  font-size:.6rem;
+  flex-shrink:0;
+}
+.sk-item span {
   font-family: var(--mono);
   font-size:.6rem;
   letter-spacing:.06em;
   text-transform:uppercase;
   color: var(--text2);
-  flex:1;
-  min-width:0;
-}
-.bar { flex:0 0 90px; height:2px; background: var(--border2); position:relative; }
-.bar-fill {
-  position:absolute; top:0; left:0;
-  height:100%; background: var(--lime);
-  width:0; transition: width 1.6s cubic-bezier(.16,1,.3,1);
-  box-shadow:0 0 8px rgba(200,255,0,.5);
-}
-.pct {
-  font-family: var(--mono);
-  font-size:.52rem;
-  color: var(--text2);
-  min-width:24px; text-align:right;
 }
 
 /* ══════════════════════════════════
@@ -869,6 +887,7 @@ html.light #site-header {
   display:grid;
   grid-template-columns:repeat(3,1fr);
   grid-auto-rows:320px;
+  grid-auto-flow:dense;
   gap:12px;
 }
 .bc {
@@ -1217,4 +1236,5 @@ footer {
   .browser-body { padding:32px 22px; }
   .mock-hero { font-size:1.5rem; }
   .showcase-meta { gap:24px; }
+  .domains-grid { grid-template-columns:1fr; }
 }
