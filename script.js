@@ -52,10 +52,6 @@
     entries.forEach(e => {
       if (!e.isIntersecting) return;
       e.target.classList.add('in');
-      // Animate skill bars when revealed
-      e.target.querySelectorAll('.bar-fill').forEach(b => {
-        b.style.width = b.dataset.w + '%';
-      });
       // Animate edu cards line
       if (e.target.classList.contains('edu-card')) {
         e.target.classList.add('in');
